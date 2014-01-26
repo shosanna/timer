@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <title>Simple timer</title>
+        <script src="http://code.jquery.com/jquery-1.11.0.js"></script>
+        <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+        <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,300,600,700,800,400' rel='stylesheet' type='text/css'>
+        <link href="main.css" rel="stylesheet" type="text/css"/>
+
+    </head>
+    <body id="home">
+        <div id="wrapper">
+            <div id="headline">
+                <div class="button main"> <p>20</p></div>
+                <div class="button main"><p>5</p></div>
+                <div class="bar twenty">
+                    <span class="dot">.</span>
+                    <span class="dot">.</span>
+                    <span class="dot">.</span>
+                    <span class="dot">.</span>
+                    <span class="dot">.</span>
+                    <span class="dot">.</span>
+                    <span class="dot">.</span>
+                    <span class="dot">.</span>
+                    <span class="dot">.</span>
+                    <span class="dot">.</span>
+                    <span class="dot">.</span>
+                    <span class="dot">.</span>
+                    <span class="dot">.</span>
+                    <span class="dot">.</span>
+                    <span class="dot">.</span>
+                    <span class="dot">.</span>
+                    <span class="dot">.</span>
+                    <span class="dot">.</span>
+                    <span class="dot">.</span>
+                    <span class="dot">.</span>
+                </div>
+                <div class="bar five">
+                    <span class="dot">.</span>
+                    <span class="dot">.</span>
+                    <span class="dot">.</span>
+                    <span class="dot">.</span>
+                    <span class="dot">.</span>
+                </div>
+
+            </div>
+            <div id="box">
+                <input class="task">
+                <button class="pink">New</button>
+
+
+                <ul id="sortable">
+                    <li class="task">
+                        <span class="task done">Play LoL ranked game</span>
+                        <span class="option active_action">active</span>
+                        <span class="option done_action">done</span>
+                        <span class="option delete">delete</span>
+                    </li>
+
+                    <li class="task">
+                        <span class="task done active">Play LoL ranked game</span>
+                        <span class="option active_action">active</span>
+                        <span class="option done_action">done</span>
+                        <span class="option delete">delete</span>
+                    </li>
+
+                    <li class="task">
+                        <span class="task done">Play LoL ranked game</span>
+                        <span class="option active_action">active</span>
+                        <span class="option done_action">done</span>
+                        <span class="option delete">delete</span>
+                    </li>
+
+                 </ul>
+            </div>
+            <div class="quote" id="quote">
+
+            </div>
+        </div>
+        <script src="script.js">
+        </script>
+    </body>
+</html>

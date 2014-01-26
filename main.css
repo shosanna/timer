@@ -1,0 +1,130 @@
+body {
+
+    font-family: "Open Sans";
+
+}
+#headline {
+    height: 150px;
+    width: 100%;
+    background-color: #3f424f;
+
+}
+
+.button.main {
+    margin: 10px 0 0 40px;
+    float: left;
+}
+
+.button.main p {
+    margin: 22px 20px 0 28px;
+    font-size: 64px;
+    color: white;
+    font-weight: 400;
+}
+
+.bar.twenty {
+    width: 600px;
+    height: 50px;
+    background-color: lightpink;
+    float: left;
+    margin: 50px 0 0 130px;
+    transition: all 0.3s ease;
+    text-align: center;
+
+}
+
+span.dot {
+    color: #3f424f;
+    font-size: 34px;
+    margin: 7px;
+}
+.bar.five {
+    width: 200px;
+    height: 50px;
+    background-color: lightpink;
+    float: left;
+    margin: 50px 0 0 130px;
+    text-align: center;
+    display: none;
+}
+
+#box {
+    margin: 30px auto 0 auto;
+    width: 80%;
+    /*border: 1px solid black;*/
+    padding: 10px;
+    overflow: hidden;
+
+}
+
+input.task {
+    display: block;
+    float: left;
+    margin: 10px 0 10px 10px;
+    width: 400px;
+    height: 40px;
+
+}
+
+input:focus {
+    outline-color: lightpink;
+}
+
+
+button.pink {
+    foat: left;
+    background-color: lightpink;
+    width: 100px;
+    height: 40px;
+    margin: 10px 0 10px 10px;
+    color: #3f424f;
+    font-family: "Open Sans";
+    font-size: 24px;
+    border: none;
+}
+
+ul {
+    margin-top: 45px;
+    overflow: hidden;
+    list-style-image: url("http://i.imgur.com/YrVbSsH.png");
+}
+
+li.task {
+    padding: 5px;
+}
+
+span.task {
+    color: #3f424f;
+    font-size: 30px;
+    font-family: "Open Sans";
+    font-weight: 100;
+    margin: 20px;
+    cursor: pointer;
+}
+
+span.option {
+    color: gray;
+    font-size: 20px;
+    font-family: "Open Sans";
+    font-weight: 100;
+    margin: 20px;
+    cursor: pointer;
+}
+
+.done {
+    text-decoration: line-through;
+}
+
+span.active {
+    color: lightpink;
+}
+
+.quote {
+    margin: 10px;
+    position: fixed;
+    bottom: 0px;
+    font-style: italic;
+    font-size: 24px;
+    color: gray;
+    font-weight: 100;
+}
