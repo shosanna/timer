@@ -1,26 +1,26 @@
 body {
     font-family: "Open Sans";
+    margin: 0;
 }
 
 /* HEAD */
-#headline {
+.headline {
     width: 100%;
     height: 150px;
-    background-color: #3f424f;
     float: left;
-    transition: all 0.9s ease;
     text-align: center;
+    background-color: rgba(63, 66, 79, 0.85);
+    position: relative;
 }
 
 .main {
     height: 150px;
-    background-color: rgba(63, 66, 79, 0.71);
     float: left;
 }
 
 .main.pink {
     height: 150px;
-    background-color: rgba(255, 182, 193, 0.71);
+    background-color: rgba(255, 182, 193, 0.75);
     float: left;
 }
 
@@ -32,6 +32,19 @@ body {
 }
 
 .timer {
+    height: 150px;
+    width: 100%;
+}
+
+.overlay {
+    background: rgba(63, 66, 79, 0.9);
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 150px;
+    width: 100%;
+    z-index: -1;
+    transition: width 0.5s ease-in-out;
 
 }
 
@@ -40,7 +53,6 @@ span.dot {
     font-size: 34px;
     margin: 10px;
 }
-
 
 /* TASKS */
 #box {
@@ -56,17 +68,20 @@ input.new-task-text {
     display: block;
     float: left;
     margin: 10px 0 10px 10px;
-    width: 400px;
     height: 40px;
-    font-size: 20px;
+    border: none;
+    border-bottom: 1px solid lightpink;
+    width: 100%;
+    font-weight: 100;
+    font-size: 26px;
     font-family: "Open Sans";
 
 }
 
 input:focus {
-    outline-color: lightpink;
+    /*outline-color: lightpink;*/
+    outline: none;
 }
-
 
 button.pink {
     foat: left;
@@ -126,4 +141,15 @@ span.done {
     font-size: 24px;
     color: gray;
     font-weight: 100;
+}
+
+
+.clearfix:before,
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.clearfix:after {
+    clear: both;
 }

@@ -12,11 +12,11 @@
 
 </head>
 <body id="home">
-<div id="wrapper">
-    <div id="headline">
+<div class="wrapper">
+    <div class="headline">
         <div class="main"><p>20</p></div>
         <div class="main pink"><p>5</p></div>
-        <div class="bar twenty">
+        <div class="timer">
             <span class="dot">.</span>
             <span class="dot">.</span>
             <span class="dot">.</span>
@@ -32,13 +32,6 @@
             <span class="dot">.</span>
             <span class="dot">.</span>
             <span class="dot">.</span>
-            <span class="dot">.</span>
-            <span class="dot">.</span>
-            <span class="dot">.</span>
-            <span class="dot">.</span>
-            <span class="dot">.</span>
-        </div>
-        <div class="bar five">
             <span class="dot">.</span>
             <span class="dot">.</span>
             <span class="dot">.</span>
@@ -46,11 +39,11 @@
             <span class="dot">.</span>
         </div>
 
+        <div class="overlay"></div>
     </div>
     <div id="box">
-        <form action="">
-            <input class="new-task-text" type="text" placeholder="Task text ...">
-            <button class="pink new-task" type="submit">Create!</button>
+        <form action="" class="clearfix">
+            <input class="new-task-text" type="text" placeholder="Type a task and hit enter">
         </form>
 
         <ul class="sortable tasks">
