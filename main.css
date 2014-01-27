@@ -1,53 +1,48 @@
 body {
-
     font-family: "Open Sans";
-
 }
+
+/* HEAD */
 #headline {
-    height: 150px;
     width: 100%;
+    height: 150px;
     background-color: #3f424f;
-
+    float: left;
+    transition: all 0.9s ease;
+    text-align: center;
 }
 
-.button.main {
-    margin: 10px 0 0 40px;
+.main {
+    height: 150px;
+    background-color: rgba(63, 66, 79, 0.71);
     float: left;
 }
 
-.button.main p {
+.main.pink {
+    height: 150px;
+    background-color: rgba(255, 182, 193, 0.71);
+    float: left;
+}
+
+.main p {
     margin: 22px 20px 0 28px;
     font-size: 64px;
     color: white;
     font-weight: 400;
 }
 
-.bar.twenty {
-    width: 600px;
-    height: 50px;
-    background-color: lightpink;
-    float: left;
-    margin: 50px 0 0 130px;
-    transition: all 0.3s ease;
-    text-align: center;
+.timer {
 
 }
 
 span.dot {
-    color: #3f424f;
+    color: #fff;
     font-size: 34px;
-    margin: 7px;
-}
-.bar.five {
-    width: 200px;
-    height: 50px;
-    background-color: lightpink;
-    float: left;
-    margin: 50px 0 0 130px;
-    text-align: center;
-    display: none;
+    margin: 10px;
 }
 
+
+/* TASKS */
 #box {
     margin: 30px auto 0 auto;
     width: 80%;
@@ -57,12 +52,14 @@ span.dot {
 
 }
 
-input.task {
+input.new-task-text {
     display: block;
     float: left;
     margin: 10px 0 10px 10px;
     width: 400px;
     height: 40px;
+    font-size: 20px;
+    font-family: "Open Sans";
 
 }
 
@@ -75,11 +72,11 @@ button.pink {
     foat: left;
     background-color: lightpink;
     width: 100px;
-    height: 40px;
+    height: 45px;
     margin: 10px 0 10px 10px;
     color: #3f424f;
     font-family: "Open Sans";
-    font-size: 24px;
+    font-size: 20px;
     border: none;
 }
 
@@ -93,13 +90,14 @@ li.task {
     padding: 5px;
 }
 
-span.task {
+span.task-text {
     color: #3f424f;
     font-size: 30px;
     font-family: "Open Sans";
     font-weight: 100;
     margin: 20px;
     cursor: pointer;
+    padding: 5px;
 }
 
 span.option {
@@ -111,14 +109,15 @@ span.option {
     cursor: pointer;
 }
 
-.done {
+span.done {
     text-decoration: line-through;
 }
 
-span.active {
-    color: lightpink;
+.active {
+    background-color: lightpink;
 }
 
+/* FOOTER */
 .quote {
     margin: 10px;
     position: fixed;
