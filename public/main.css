@@ -13,10 +13,36 @@ body {
     position: relative;
 }
 
+/* BUTTONS */
+
+
+.running .main {
+    cursor: default;
+}
+
+.running .timer {
+    cursor: pointer;
+}
+
+
+.running .overlay {
+    background-color: purple;
+}
+
+.running .hidden {
+    opacity: 1;
+}
+
 .main {
     height: 150px;
     float: left;
+    cursor: pointer;
 }
+
+.main:hover {
+    opacity: 0.8;
+}
+
 
 .main.pink {
     height: 150px;
@@ -31,9 +57,24 @@ body {
     font-weight: 400;
 }
 
+
+/* TIMER */
+
 .timer {
     height: 150px;
     width: 100%;
+}
+
+.timer p {
+    margin-right: 30px;
+    color: rgba(255, 182, 193, 0.35);
+    font-size: 44px;
+    font-weight: 100;
+    text-align: right;
+}
+
+.hidden {
+    display: none;
 }
 
 .overlay {
@@ -44,14 +85,14 @@ body {
     height: 150px;
     width: 100%;
     z-index: -1;
-    transition: width 0.5s ease-in-out;
+    transition: width 0.2s ease-in-out;
 
 }
 
 span.dot {
     color: #fff;
     font-size: 34px;
-    margin: 10px;
+    margin: 18px;
 }
 
 /* TASKS */
@@ -70,7 +111,7 @@ input.new-task-text {
     margin: 10px 0 10px 10px;
     height: 40px;
     border: none;
-    border-bottom: 1px solid lightpink;
+    /*border-bottom: 1px solid lightpink;*/
     width: 100%;
     font-weight: 100;
     font-size: 26px;
@@ -129,7 +170,7 @@ span.done {
 }
 
 .active {
-    background-color: lightpink;
+    background-color: rgba(255, 182, 193, 0.24);
 }
 
 /* FOOTER */
@@ -137,13 +178,14 @@ span.done {
     margin: 10px;
     position: fixed;
     bottom: 0px;
+    right: 0px;
     font-style: italic;
     font-size: 24px;
     color: gray;
     font-weight: 100;
 }
 
-
+/* OTHER */
 .clearfix:before,
 .clearfix:after {
     content: " "; /* 1 */

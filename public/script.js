@@ -24,7 +24,6 @@ function Timer(interval) {
     this.isRunning = false;
     clearInterval(this.intervalId);
     this.intervalId = null;
-    $(".hidden").fadeOut();
   };
 
 }
@@ -68,24 +67,37 @@ $(document).ready(function() {
     };
   }
 
-  $(".timer").click(function(){
-    timer.stop();
-    $(".overlay").css("background", "rgba(63, 66, 79, 0.9)");
+  function visualChangesOn() {
+    $(".headline").addClass("running");
+    $(".hidden").fadeIn();
+  };
 
+  function visualChangesOff() {
+    $(".headline").removeClass("running");
+    $(".hidden").fadeOut();
+  }
+
+  // Clicking interrupt
+  $(".timer").click(function(){
+    if (timer.isRunning) {
+      timer.stop();
+      visualChangesOff()
+    }
   });
 
+  // Clicking start buttons
   $(".twenty").click(function(){
-    $(".overlay").css("background", "red");
-    $(".timer").css("cursor", "pointer");
-    $(".hidden").fadeIn();
-    startTimer(20);
+    if (!timer.isRunning) {
+      visualChangesOn();
+      startTimer(20);
+    }
   });
 
   $(".five").click(function(){
-    $(".overlay").css("background", "red");
-    $(".timer").css("cursor", "pointer");
-    $(".hidden").fadeIn();
-    startTimer(5);
+    if (!timer.isRunning) {
+      visualChangesOn();
+      startTimer(5);
+    }
   });
 
   // Tasks are sortable
