@@ -24,6 +24,9 @@ body {
     cursor: pointer;
 }
 
+.running .main:hover {
+    opacity: 1;
+}
 
 .running .overlay {
     background-color: purple;

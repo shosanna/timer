@@ -41,9 +41,9 @@ $(document).ready(function() {
     "Never mistake motion for action."];
   var quote_div = document.getElementById("quote");
   var i = 0;
+
   function changeQuote() {
-    var sentence = quotes[i++ % quotes.length];
-    quote_div.innerHTML = sentence;
+    quote_div.innerHTML = quotes[i++ % quotes.length];
   };
   changeQuote();
   setInterval(changeQuote, 10000);
@@ -57,13 +57,13 @@ $(document).ready(function() {
       console.log("Timer is already running");
       return
     } else {
-    timer.start(seconds);
+      timer.start(seconds);
     }
 
     timer.onTick = function(time) {
       var width = $(".timer").width();
       var second = width / seconds;
-      $(".overlay").width(width - time * second );
+      $(".overlay").width(width - time * second);
     };
   }
 
@@ -78,7 +78,7 @@ $(document).ready(function() {
   }
 
   // Clicking interrupt
-  $(".timer").click(function(){
+  $(".timer").click(function() {
     if (timer.isRunning) {
       timer.stop();
       visualChangesOff()
@@ -86,14 +86,14 @@ $(document).ready(function() {
   });
 
   // Clicking start buttons
-  $(".twenty").click(function(){
+  $(".twenty").click(function() {
     if (!timer.isRunning) {
       visualChangesOn();
       startTimer(20);
     }
   });
 
-  $(".five").click(function(){
+  $(".five").click(function() {
     if (!timer.isRunning) {
       visualChangesOn();
       startTimer(5);
@@ -219,8 +219,8 @@ $(document).ready(function() {
 
     tasks.forEach(function(task) {
       var $task = template.clone();
-      $text = $task.find(".task-text");
-      $parent = $text.parent("li");
+      var $text = $task.find(".task-text");
+      var $parent = $text.parent("li");
 
       if (task.done) {
         $text.addClass("done");
