@@ -25,7 +25,17 @@ function Timer(interval) {
     clearInterval(this.intervalId);
     this.intervalId = null;
   };
+}
 
+function s4() {
+  return Math.floor((1 + Math.random()) * 0x10000)
+    .toString(16)
+    .substring(1);
+};
+
+function guid() {
+  return s4() + s4() + '-' + s4() + '-' + s4() + '-' +
+    s4() + '-' + s4() + s4() + s4();
 }
 
 
@@ -109,18 +119,26 @@ $(document).ready(function() {
   // MODEL
   var tasks = [];
 
+  $.getJSON("/tasks", function(data) {
+    tasks = data;
+    render();
+  });
+
   //  Adding new task
   function add(text) {
     if (text !== "") {
-      tasks.push({ text: text, done: false, active: false });
+      var task = { text: text, done: false, active: false, id: guid() };
+      tasks.push(task);
+
+      $.post("/tasks", { task: task });
     }
   }
 
-  function findTask(text) {
+  function findTask(id) {
     var found;
 
     tasks.forEach(function(task) {
-      if (text === task.text) {
+      if (id === task.id) {
         found = task;
       }
     });
@@ -149,8 +167,8 @@ $(document).ready(function() {
   }
 
   // Toggles done property of a task with a given text
-  function toggleTaskProperty(text, property) {
-    var task = findTask(text);
+  function toggleTaskProperty(id, property) {
+    var task = findTask(id);
 
     switch (property) {
       case "done":
@@ -188,23 +206,23 @@ $(document).ready(function() {
   function bindEvents(el) {
     el.find(".done_action").click(function(e) {
       e.preventDefault();
-      var text = $(this).siblings(".task-text").text();
-      toggleTaskProperty(text, "done");
+      var id = $(this).siblings(".task-text").parent().attr("data-id");
+      toggleTaskProperty(id, "done");
       render();
     });
 
     el.find(".active_action").click(function(e) {
       e.preventDefault();
-      var text = $(this).siblings(".task-text").text();
-      toggleTaskProperty(text, "active");
+      var id= $(this).siblings(".task-text").parent().attr("data-id");
+      toggleTaskProperty(id, "active");
       render();
     });
 
     el.find(".delete_action").click(function(e) {
       e.preventDefault();
-      var text = $(this).siblings(".task-text").text();
+      var id = $(this).siblings(".task-text").parent().attr("data-id");
 
-      var task = findTask(text);
+      var task = findTask(id);
       var index = tasks.indexOf(task);
       tasks.splice(index, 1);
 
@@ -225,6 +243,8 @@ $(document).ready(function() {
       if (task.done) {
         $text.addClass("done");
       }
+
+      $task.attr("data-id", task.id);
 
       if (task.active) {
         $parent.addClass("active");
